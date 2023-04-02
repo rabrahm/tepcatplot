@@ -34,7 +34,7 @@ def trans_signal(Mp,Rp,Rs,Teq,mJ):
         I = np.where((Rp >=2.75) & (Rp < 4))[0]
         sf[I] = 1.28
         I = np.where(Rp >=4)[0]
-        sf[I] = 1.5
+        sf[I] = 1.15
     except:
     	if Rp < 1.5:
     		sf = 0.19
@@ -43,7 +43,7 @@ def trans_signal(Mp,Rp,Rs,Teq,mJ):
     	elif Rp < 4.:
     		sf = 1.28
     	else:
-    		sf = 1.5
+    		sf = 1.15
 
     return sf * Rp**3 * Teq * 10**(-mJ/5.) /(Mp * Rs**2)
 
